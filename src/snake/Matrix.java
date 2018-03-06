@@ -1,7 +1,6 @@
 package snake;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Matrix {
     private static Coord size;
@@ -30,7 +29,6 @@ public class Matrix {
 
     protected static void setStartSnake() {
         clearField();
-
         int x_start = size.x / 2;
             int y_start = size.y - 2;
             snake.clear();
@@ -38,7 +36,6 @@ public class Matrix {
             Coord coord = new Coord(x_start, y_start - y);
             snake.add(0, coord);
         }
-
         addSnakeOnfield();
         newBonus();
         addBonus();
@@ -61,7 +58,6 @@ public class Matrix {
         } else {
             snake.remove(snake.size() - 1);
         }
-
         clearField();
         addSnakeOnfield();
         addBonus();
@@ -94,6 +90,5 @@ public class Matrix {
                 break;
             }
         }
-
     }
 }

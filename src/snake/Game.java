@@ -7,7 +7,6 @@ public class Game {
 
     public Game(int x, int y) {
         Matrix.setSize(new Coord(x, y));
-
     }
 
     public static void start() {
@@ -91,8 +90,7 @@ public class Game {
             if (checkRight()) {
                 Matrix.moveSnake(3);
                 direction = 3;
-            }
-            else {
+            } else {
                 gameOver = true;
             }
         }
@@ -128,9 +126,6 @@ public class Game {
     }
 
     public static int getSizeSnake() {
-        System.out.println(Matrix.snake.size());
         return Matrix.snake.size();
-
     }
-
 }

@@ -9,16 +9,15 @@ import java.awt.event.KeyListener;
 public class GameSnake extends JFrame {
 
     private JPanel panelField;
-    private static JLabel label = new JLabel();
+    private JLabel label = new JLabel();
     private JLabel labelMenu = new JLabel();
 
-    private final String TITLE = "Snake v.0.5";
+    private final String TITLE = "Snake v.1.0";
     private final int WIDTH_FIELD = 20;
     private final int HEIGHT_FIELD = 20;
     private final int SIZE_BLOCK = 20;
     private final int SPEED_SNAKE = 300;
-    private int SPEED = SPEED_SNAKE;
-
+    private int SPEED = SPEED_SNAKE; // для возможности менять скорость
 
     public static void main(String[] args) {
         new GameSnake();
@@ -31,7 +30,6 @@ public class GameSnake extends JFrame {
         initLabel();
         initFrame();
         go();
-
     }
 
     private void initField() {
@@ -53,7 +51,6 @@ public class GameSnake extends JFrame {
                             gr.setColor(Color.YELLOW);
                             gr.fillOval(x * SIZE_BLOCK + 2, y * SIZE_BLOCK + 2, SIZE_BLOCK - 3, SIZE_BLOCK - 3);
                         }
-
                     }
                 }
                 if (Game.isGameOver()) {
@@ -69,7 +66,6 @@ public class GameSnake extends JFrame {
         panelField.setPreferredSize(new Dimension(WIDTH_FIELD * SIZE_BLOCK, HEIGHT_FIELD * SIZE_BLOCK));
         panelField.setBackground(Color.GREEN);
         add(panelField, BorderLayout.CENTER);
-
     }
 
     private void labelGame() {
@@ -90,10 +86,7 @@ public class GameSnake extends JFrame {
     private void initFrame() {
         addKeyListener(new KeyListener() {
             @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
+            public void keyTyped(KeyEvent e) { }
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -115,15 +108,11 @@ public class GameSnake extends JFrame {
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
                     Game.moveRight();
                 }
-
                 repaint();
                 labelGame();
             }
-
             @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
+            public void keyReleased(KeyEvent e) { }
         });
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -143,8 +132,6 @@ public class GameSnake extends JFrame {
                 repaint();
                 labelGame();
             }
-
         }
     }
-
 }
